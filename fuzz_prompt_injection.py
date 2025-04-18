@@ -6,9 +6,14 @@ terminal progress bars, timing, and parallel generation + testing.
 Dependencies:
   pip install ollama tqdm
 
-Usage:
-  python fuzz_prompt_injection.py --num-prompts 42 --workers 4 \
-      --username ctf_user --password s3cr3t_flag --output results.json
+Example Usage:
+  python fuzz_prompt_injection.py \
+    --num-prompts 350 \
+    --workers 7 \
+    --prompt-model llama3.2:1b \
+    --fuzz-model llama3.2:1b \
+    --username ctf_user \
+    --password s3cr3t_flag \
 """
 import time
 import json
@@ -85,7 +90,7 @@ def main():
     parser.add_argument("--fuzz-model", default="llama3.2:1b", help="Model for testing injections")
     parser.add_argument("--username", required=True, help="CTF username secret")
     parser.add_argument("--password", required=True, help="CTF password secret")
-    parser.add_argument("--output", default="fuzz_results.json", help="File to save test results")
+    parser.add_argument("--output", default="results/fuzz_results.json", help="File to save test results")
     args = parser.parse_args()
 
     # Distribute prompts evenly across methods
