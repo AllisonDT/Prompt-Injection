@@ -1,2 +1,3 @@
 /ollama_injection_logs/*
+/results.json
 .DS_Store
