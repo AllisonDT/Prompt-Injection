@@ -57,8 +57,7 @@ cd Prompt-Injection-Fuzzer
      --prompt-model llama3.2:1b \
      --fuzz-model llama3.2:1b \
      --username ctf_user \
-     --password s3cr3t_flag \
-     --output results/fuzz_results.json
+     --password s3cr3t_flag
    ```
 
 ## Customization
@@ -71,7 +70,7 @@ You can tweak behavior via CLI flags or by editing constants in the script:
   - `--prompt-model` (str) – model for prompt generation (default `llama3.2:1b`)
   - `--fuzz-model` (str) – model for injection testing (default `llama3.2:1b`)
   - `--username`/`--password` (str) – secrets under test (default `ctf_user`/`s3cr3t_flag`)
-  - `--output` (str) – JSON filepath for results
+  - `--output` (str) – JSON filepath for results (default `results/fuzz_results.json`)
 
 - **In‑code constants**
   - `METHODS` – list of injection styles
