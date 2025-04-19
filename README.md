@@ -59,6 +59,15 @@ cd Prompt-Injection-Fuzzer
      --username ctf_user \
      --password s3cr3t_flag
    ```
+3. **View results**:
+   ```bash
+   cat results/fuzz_results.json
+   ```
+4. **Visualize results** (optional):
+   ```bash
+   python3 visualize_results.py results/fuzz_results.json
+   ```
+   This will generate a bar chart of the results using Matplotlib as well as .txt with the results in the results directory.
 
 ## Customization
 
